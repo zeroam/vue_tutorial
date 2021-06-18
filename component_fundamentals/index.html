@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Coffee Plans</h1>
+      <h2>
+        We travel the world to source the very best single origin coffee for you
+      </h2>
+      <div class="plans">
+        <plan-picker></plan-picker>
+      </div>
+    </div>
+
+    <script type="text/x-template" id="plan-picker-template">
+      <div class="plans">
+      	<plan v-for="plan in plans" :name="plan" @select="selectPlan" :selected-plan="selectedPlan"></plan>
+      </div>
+    </script>
+
+    <script type="text/x-template" id="plan-template">
+      <div @click="select" class="plan" :class="{'active-plan': isSelected}">
+      	<div class="description">
+      			<span class="title">
+      				{{ name }}
+      			</span>
+      	</div>
+      </div>
+    </script>
+
+    <!-- ------------- -->
+
+    <div id="app2">
+      <h1>Vue.js Slots Fundamentals</h1>
+      <todo-item>
+        Buy Bananas
+        <template v-slot:description> Banana Description </template>
+				<template #button-text>Make it rain</template>
+      </todo-item>
+      <todo-item>Eat Bananas</todo-item>
+      <todo-item>Celebrate</todo-item>
+    </div>
+
+    <script type="text/x-template" id="todo-item-template">
+      <div>
+      	<input type="checkbox" v-model="completed">
+      	<span :class="{done: completed}">
+      		<slot></slot>
+      	</span>
+      	<slot name="description"></slot>
+				<button>
+					<slot name="button-text">Highlight</slot>
+				</button>
+      </div>
+    </script>
+
+    <script src="app.js"></script>
+    <style>
+      .active-plan {
+        color: red;
+      }
+
+      .done {
+        color: green;
+        text-decoration: line-through;
+      }
+    </style>
+  </body>
+</html>
