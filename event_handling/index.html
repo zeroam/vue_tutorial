@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="index.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+	<div id="example-1">
+		<button v-on:click="counter += 1">Add 1</button>
+		<p>The button above has been clicked {{ counter }} times.</p>
+	</div>
+
+	<div id="example-2">
+		<button v-on:click="greet">Great</button>
+	</div>
+
+	<div id="example-3">
+		<button v-on:click="say('hi')">Say hi</button>
+		<button v-on:click="say('what')">Say what</button>
+		<button v-on:click="warn('Form cannot be submitted yet.', $event)">Submit</button>
+	</div>
+
+	<script src="index.js"></script>
+</body>
+</html>
