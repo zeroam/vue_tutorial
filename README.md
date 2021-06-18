@@ -13,3 +13,6 @@
 
 ### Lectures
 - [Vue.js Components Fundamentals](https://vueschool.io/courses/vuejs-components-fundamentals?friend=vuejs)
+
+### Reference
+- [Semantic UI](https://semantic-ui.com/introduction/getting-started.html)

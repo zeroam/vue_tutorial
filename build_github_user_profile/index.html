@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+  </head>
+
+  <body>
+    <div id="app" class="ui container">
+      <h1>GitHub Profiles</h1>
+
+      <div class="ui cards">
+        <github-user-card v-for="username in usernames" :username="username"></github-user-card>
+      </div>
+    </div>
+
+    <script type="text/x-template" id="github-user-card-template">
+      <div class="ui card">
+        <div class="image">
+          <img v-bind:src="user.avatar_url" />
+        </div>
+        <div class="content">
+          <a :href="user.html_url" class="header">{{user.name}}</a>
+          <div class="meta">
+            <span class="date">Joined in {{user.created_at}}</span>
+          </div>
+          <div class="description">
+            {{user.bio}}
+          </div>
+        </div>
+        <div class="extra content">
+          <a>
+            <i class="user icon"></i>
+            {{user.followers}} Followers
+          </a>
+          <a>
+            <i class="user icon"></i>
+            {{user.following}} Following
+          </a>
+        </div>
+      </div>
+    </script>
+
+    <!-- Import Vue.js and axios -->
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- Your JavaScript Code :) -->
+    <script src="app.js"></script>
+  </body>
+</html>
