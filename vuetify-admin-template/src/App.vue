@@ -1,6 +1,17 @@
 <template>
   <v-app>
-    <v-navigation-drawer app>
+    <v-app-bar
+      app
+      color="primary"
+      dark
+    >
+      <v-app-bar-nav-icon @click="drawer = !drawer" />
+      <v-spacer />
+    </v-app-bar>
+    <v-navigation-drawer
+      v-model="drawer"
+      app
+    >
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="text-h6">
@@ -34,7 +45,9 @@
     </v-navigation-drawer>
 
     <v-main>
-      <router-view />
+      <v-container fluid>
+        <router-view />
+      </v-container>
     </v-main>
   </v-app>
 </template>
@@ -44,11 +57,13 @@ export default {
   name: "App",
 
   data: () => ({
+    drawer: false,
     items: [
       { title: "Dashboard", icon: "mdi-view-dashboard", to: "/" },
       { title: "Grid System", icon: "mdi-view-dashboard", to: "/grid-system" },
+      { title: "Grid List Page", icon: "mdi-view-dashboard", to: "/grid-list-page" }
     ],
-    right: null,
-  }),
+    right: null
+  })
 };
 </script>
