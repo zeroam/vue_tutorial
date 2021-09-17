@@ -4,10 +4,27 @@
       <v-card-title>
         Typography
       </v-card-title>
-      <v-container class="grey lighten-3">
+      <v-card-text class="grey lighten-3">
+        <v-card class="text-h2 primary lighten-1">
+          컨텐츠
+        </v-card>
+        <v-card class="text-h2 secondary">
+          컨텐츠
+        </v-card>
+        <v-card class="text-h2 error">
+          컨텐츠
+        </v-card>
+        <v-card class="text-h2 primary--text">
+          컨텐츠
+        </v-card>
+        <v-card class="text-h2 secondary--text">
+          컨텐츠
+        </v-card>
+        <v-card class="text-h2 error--text">
+          컨텐츠
+        </v-card>
         <v-card
           class="pa-3"
-          outlined
         >
           <p class="text-h1">
             Heading 1
@@ -37,7 +54,7 @@
             Morbi mattis ullamcorper velit.
           </p>
         </v-card>
-      </v-container>
+      </v-card-text>
     </v-card>
   </v-container>
 </template>
