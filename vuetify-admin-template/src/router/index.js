@@ -5,6 +5,10 @@ import GridSystem from '@/views/GridSystem'
 import GridListPage from '@/views/GridListPage'
 import Breakpoints from '@/views/Breakpoints'
 import Typography from '@/views/Typography'
+import Tables from '@/views/Tables'
+import Forms from '@/views/Forms'
+import Buttons from '@/views/Buttons'
+import Icons from '@/views/Icons'
 
 Vue.use(VueRouter)
 
@@ -33,6 +37,26 @@ const routes = [
     path: '/typography',
     name: 'Typography',
     component: Typography,
+  },
+  {
+    path: '/tables',
+    name: 'Tables',
+    component: Tables,
+  },
+  {
+    path: '/forms',
+    name: 'Forms',
+    component: Forms,
+  },
+  {
+    path: '/buttons',
+    name: 'Buttons',
+    component: Buttons,
+  },
+  {
+    path: '/icons',
+    name: 'Icons',
+    component: Icons,
   },
 ]
 
